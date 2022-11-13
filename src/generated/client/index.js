@@ -1069,7 +1069,16 @@ const config = {
     "config": {
       "engineType": "library"
     },
-    "binaryTargets": [],
+    "binaryTargets": [
+      {
+        "fromEnvVar": null,
+        "value": "darwin"
+      },
+      {
+        "fromEnvVar": null,
+        "value": "debian-openssl-1.1.x"
+      }
+    ],
     "previewFeatures": [],
     "isCustomOutput": true
   },
@@ -1104,5 +1113,8 @@ Object.assign(exports, Prisma)
 
 path.join(__dirname, "libquery_engine-darwin.dylib.node");
 path.join(process.cwd(), "src/generated/client/libquery_engine-darwin.dylib.node")
+
+path.join(__dirname, "libquery_engine-debian-openssl-1.1.x.so.node");
+path.join(process.cwd(), "src/generated/client/libquery_engine-debian-openssl-1.1.x.so.node")
 path.join(__dirname, "schema.prisma");
 path.join(process.cwd(), "src/generated/client/schema.prisma")
