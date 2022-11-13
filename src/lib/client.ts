@@ -9,6 +9,8 @@
  */
 import { PrismaClient } from '../generated/client';
 
+export { PrismaClient, Alliance, Corporation, Character } from '../generated/client';
+
 export const createClient = (url: string) => {
   return new PrismaClient({
     datasources: {
