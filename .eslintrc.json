@@ -16,6 +16,18 @@
   ],
   "globals": { "BigInt": true, "console": true, "WebAssembly": true },
   "rules": {
+    // start prisma errors
+    "functional/prefer-readonly-type": "off",
+    "functional/prefer-type-literal": "off",
+    "functional/no-class": "off",
+    "functional/no-method-signature": "off",
+    "functional/no-return-void": "off",
+    "functional/no-mixed-type": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/ban-types": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    // end prisma errors
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "eslint-comments/disable-enable-pair": [
       "error",
