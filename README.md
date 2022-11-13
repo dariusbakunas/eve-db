@@ -9,3 +9,9 @@ Prism client for eve-warehouse application
 ```bash
 yarn prepare-release
 ```
+
+### Release
+
+```bash
+git push --follow-tags origin main && npm publish --access public
+```
