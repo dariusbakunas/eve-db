@@ -7,7 +7,6 @@
  * const client = createClient("postgres://postgres:<password>@<db_host>/eve_warehouse?schema=evesde");
  * ```
  */
-
 import { PrismaClient } from '../generated/client';
 
 export const createClient = (url: string) => {
