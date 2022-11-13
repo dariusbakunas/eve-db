@@ -1,5 +1,5 @@
 {
-  "name": "eve-db",
+  "name": "@dariusbakunas/eve-db",
   "version": "1.0.1",
   "description": "Prism client for eve-warehouse application",
   "main": "build/main/index.js",
