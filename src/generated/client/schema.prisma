@@ -24,7 +24,7 @@ model User {
 
 model Character {
   id             Int         @id @default(autoincrement())
-  esiId          Int
+  esiId          BigInt
   createdAt      DateTime    @default(now())
   updatedAt      DateTime    @updatedAt
   accessToken    String
@@ -43,7 +43,7 @@ model Character {
   scopes         String
   securityStatus Decimal?
   title          String?
-  totalSp        Int?
+  totalSp        BigInt?
   ownerId        Int
   owner          User        @relation(fields: [ownerId], references: [id])
   corporation    Corporation @relation(fields: [corporationId], references: [id])

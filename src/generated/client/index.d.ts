@@ -29,7 +29,7 @@ export type User = {
  */
 export type Character = {
   id: number
-  esiId: number
+  esiId: bigint
   createdAt: Date
   updatedAt: Date
   accessToken: string
@@ -48,7 +48,7 @@ export type Character = {
   scopes: string
   securityStatus: Prisma.Decimal | null
   title: string | null
-  totalSp: number | null
+  totalSp: bigint | null
   ownerId: number
 }
 
@@ -4063,7 +4063,7 @@ export namespace Prisma {
 
   export type CharacterSumAggregateOutputType = {
     id: number | null
-    esiId: number | null
+    esiId: bigint | null
     tokenExpiresAt: number | null
     allianceId: number | null
     ancestryId: number | null
@@ -4072,13 +4072,13 @@ export namespace Prisma {
     factionId: number | null
     raceId: number | null
     securityStatus: Decimal | null
-    totalSp: number | null
+    totalSp: bigint | null
     ownerId: number | null
   }
 
   export type CharacterMinAggregateOutputType = {
     id: number | null
-    esiId: number | null
+    esiId: bigint | null
     createdAt: Date | null
     updatedAt: Date | null
     accessToken: string | null
@@ -4097,13 +4097,13 @@ export namespace Prisma {
     scopes: string | null
     securityStatus: Decimal | null
     title: string | null
-    totalSp: number | null
+    totalSp: bigint | null
     ownerId: number | null
   }
 
   export type CharacterMaxAggregateOutputType = {
     id: number | null
-    esiId: number | null
+    esiId: bigint | null
     createdAt: Date | null
     updatedAt: Date | null
     accessToken: string | null
@@ -4122,7 +4122,7 @@ export namespace Prisma {
     scopes: string | null
     securityStatus: Decimal | null
     title: string | null
-    totalSp: number | null
+    totalSp: bigint | null
     ownerId: number | null
   }
 
@@ -4353,7 +4353,7 @@ export namespace Prisma {
 
   export type CharacterGroupByOutputType = {
     id: number
-    esiId: number
+    esiId: bigint
     createdAt: Date
     updatedAt: Date
     accessToken: string
@@ -4372,7 +4372,7 @@ export namespace Prisma {
     scopes: string
     securityStatus: Decimal | null
     title: string | null
-    totalSp: number | null
+    totalSp: bigint | null
     ownerId: number
     _count: CharacterCountAggregateOutputType | null
     _avg: CharacterAvgAggregateOutputType | null
@@ -85047,7 +85047,7 @@ export namespace Prisma {
     OR?: Enumerable<CharacterWhereInput>
     NOT?: Enumerable<CharacterWhereInput>
     id?: IntFilter | number
-    esiId?: IntFilter | number
+    esiId?: BigIntFilter | bigint | number
     createdAt?: DateTimeFilter | Date | string
     updatedAt?: DateTimeFilter | Date | string
     accessToken?: StringFilter | string
@@ -85066,7 +85066,7 @@ export namespace Prisma {
     scopes?: StringFilter | string
     securityStatus?: DecimalNullableFilter | Decimal | DecimalJsLike | number | string | null
     title?: StringNullableFilter | string | null
-    totalSp?: IntNullableFilter | number | null
+    totalSp?: BigIntNullableFilter | bigint | number | null
     ownerId?: IntFilter | number
     owner?: XOR<UserRelationFilter, UserWhereInput>
     corporation?: XOR<CorporationRelationFilter, CorporationWhereInput>
@@ -85140,7 +85140,7 @@ export namespace Prisma {
     OR?: Enumerable<CharacterScalarWhereWithAggregatesInput>
     NOT?: Enumerable<CharacterScalarWhereWithAggregatesInput>
     id?: IntWithAggregatesFilter | number
-    esiId?: IntWithAggregatesFilter | number
+    esiId?: BigIntWithAggregatesFilter | bigint | number
     createdAt?: DateTimeWithAggregatesFilter | Date | string
     updatedAt?: DateTimeWithAggregatesFilter | Date | string
     accessToken?: StringWithAggregatesFilter | string
@@ -85159,7 +85159,7 @@ export namespace Prisma {
     scopes?: StringWithAggregatesFilter | string
     securityStatus?: DecimalNullableWithAggregatesFilter | Decimal | DecimalJsLike | number | string | null
     title?: StringNullableWithAggregatesFilter | string | null
-    totalSp?: IntNullableWithAggregatesFilter | number | null
+    totalSp?: BigIntNullableWithAggregatesFilter | bigint | number | null
     ownerId?: IntWithAggregatesFilter | number
   }
 
@@ -89735,7 +89735,7 @@ export namespace Prisma {
   }
 
   export type CharacterCreateInput = {
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -89752,7 +89752,7 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
     owner: UserCreateNestedOneWithoutCharactersInput
     corporation: CorporationCreateNestedOneWithoutCharacterInput
     alliance?: AllianceCreateNestedOneWithoutCharacterInput
@@ -89760,7 +89760,7 @@ export namespace Prisma {
 
   export type CharacterUncheckedCreateInput = {
     id?: number
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -89779,12 +89779,12 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
     ownerId: number
   }
 
   export type CharacterUpdateInput = {
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -89801,7 +89801,7 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     owner?: UserUpdateOneRequiredWithoutCharactersNestedInput
     corporation?: CorporationUpdateOneRequiredWithoutCharacterNestedInput
     alliance?: AllianceUpdateOneWithoutCharacterNestedInput
@@ -89809,7 +89809,7 @@ export namespace Prisma {
 
   export type CharacterUncheckedUpdateInput = {
     id?: IntFieldUpdateOperationsInput | number
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -89828,13 +89828,13 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     ownerId?: IntFieldUpdateOperationsInput | number
   }
 
   export type CharacterCreateManyInput = {
     id?: number
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -89853,12 +89853,12 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
     ownerId: number
   }
 
   export type CharacterUpdateManyMutationInput = {
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -89875,12 +89875,12 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
   }
 
   export type CharacterUncheckedUpdateManyInput = {
     id?: IntFieldUpdateOperationsInput | number
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -89899,7 +89899,7 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     ownerId?: IntFieldUpdateOperationsInput | number
   }
 
@@ -95718,6 +95718,17 @@ export namespace Prisma {
     _max?: NestedEnumUserStatusFilter
   }
 
+  export type BigIntFilter = {
+    equals?: bigint | number
+    in?: Enumerable<bigint> | Enumerable<number>
+    notIn?: Enumerable<bigint> | Enumerable<number>
+    lt?: bigint | number
+    lte?: bigint | number
+    gt?: bigint | number
+    gte?: bigint | number
+    not?: NestedBigIntFilter | bigint | number
+  }
+
   export type DateTimeFilter = {
     equals?: Date | string
     in?: Enumerable<Date> | Enumerable<string>
@@ -95764,6 +95775,17 @@ export namespace Prisma {
     gt?: Decimal | DecimalJsLike | number | string
     gte?: Decimal | DecimalJsLike | number | string
     not?: NestedDecimalNullableFilter | Decimal | DecimalJsLike | number | string | null
+  }
+
+  export type BigIntNullableFilter = {
+    equals?: bigint | number | null
+    in?: Enumerable<bigint> | Enumerable<number> | null
+    notIn?: Enumerable<bigint> | Enumerable<number> | null
+    lt?: bigint | number
+    lte?: bigint | number
+    gt?: bigint | number
+    gte?: bigint | number
+    not?: NestedBigIntNullableFilter | bigint | number | null
   }
 
   export type UserRelationFilter = {
@@ -95886,6 +95908,22 @@ export namespace Prisma {
     ownerId?: SortOrder
   }
 
+  export type BigIntWithAggregatesFilter = {
+    equals?: bigint | number
+    in?: Enumerable<bigint> | Enumerable<number>
+    notIn?: Enumerable<bigint> | Enumerable<number>
+    lt?: bigint | number
+    lte?: bigint | number
+    gt?: bigint | number
+    gte?: bigint | number
+    not?: NestedBigIntWithAggregatesFilter | bigint | number
+    _count?: NestedIntFilter
+    _avg?: NestedFloatFilter
+    _sum?: NestedBigIntFilter
+    _min?: NestedBigIntFilter
+    _max?: NestedBigIntFilter
+  }
+
   export type DateTimeWithAggregatesFilter = {
     equals?: Date | string
     in?: Enumerable<Date> | Enumerable<string>
@@ -95948,6 +95986,22 @@ export namespace Prisma {
     _sum?: NestedDecimalNullableFilter
     _min?: NestedDecimalNullableFilter
     _max?: NestedDecimalNullableFilter
+  }
+
+  export type BigIntNullableWithAggregatesFilter = {
+    equals?: bigint | number | null
+    in?: Enumerable<bigint> | Enumerable<number> | null
+    notIn?: Enumerable<bigint> | Enumerable<number> | null
+    lt?: bigint | number
+    lte?: bigint | number
+    gt?: bigint | number
+    gte?: bigint | number
+    not?: NestedBigIntNullableWithAggregatesFilter | bigint | number | null
+    _count?: NestedIntNullableFilter
+    _avg?: NestedFloatNullableFilter
+    _sum?: NestedBigIntNullableFilter
+    _min?: NestedBigIntNullableFilter
+    _max?: NestedBigIntNullableFilter
   }
 
   export type CorporationListRelationFilter = {
@@ -99682,17 +99736,6 @@ export namespace Prisma {
     reprocessingEfficiency?: SortOrder
   }
 
-  export type BigIntFilter = {
-    equals?: bigint | number
-    in?: Enumerable<bigint> | Enumerable<number>
-    notIn?: Enumerable<bigint> | Enumerable<number>
-    lt?: bigint | number
-    lte?: bigint | number
-    gt?: bigint | number
-    gte?: bigint | number
-    not?: NestedBigIntFilter | bigint | number
-  }
-
   export type staStationsCountOrderByAggregateInput = {
     stationID?: SortOrder
     security?: SortOrder
@@ -99794,22 +99837,6 @@ export namespace Prisma {
     reprocessingEfficiency?: SortOrder
     reprocessingStationsTake?: SortOrder
     reprocessingHangarFlag?: SortOrder
-  }
-
-  export type BigIntWithAggregatesFilter = {
-    equals?: bigint | number
-    in?: Enumerable<bigint> | Enumerable<number>
-    notIn?: Enumerable<bigint> | Enumerable<number>
-    lt?: bigint | number
-    lte?: bigint | number
-    gt?: bigint | number
-    gte?: bigint | number
-    not?: NestedBigIntWithAggregatesFilter | bigint | number
-    _count?: NestedIntFilter
-    _avg?: NestedFloatFilter
-    _sum?: NestedBigIntFilter
-    _min?: NestedBigIntFilter
-    _max?: NestedBigIntFilter
   }
 
   export type translationTablesSourceTableTranslatedKeyCompoundUniqueInput = {
@@ -100085,6 +100112,14 @@ export namespace Prisma {
     connect?: AllianceWhereUniqueInput
   }
 
+  export type BigIntFieldUpdateOperationsInput = {
+    set?: bigint | number
+    increment?: bigint | number
+    decrement?: bigint | number
+    multiply?: bigint | number
+    divide?: bigint | number
+  }
+
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
@@ -100107,6 +100142,14 @@ export namespace Prisma {
     decrement?: Decimal | DecimalJsLike | number | string
     multiply?: Decimal | DecimalJsLike | number | string
     divide?: Decimal | DecimalJsLike | number | string
+  }
+
+  export type NullableBigIntFieldUpdateOperationsInput = {
+    set?: bigint | number | null
+    increment?: bigint | number
+    decrement?: bigint | number
+    multiply?: bigint | number
+    divide?: bigint | number
   }
 
   export type UserUpdateOneRequiredWithoutCharactersNestedInput = {
@@ -100313,14 +100356,6 @@ export namespace Prisma {
     divide?: number
   }
 
-  export type BigIntFieldUpdateOperationsInput = {
-    set?: bigint | number
-    increment?: bigint | number
-    decrement?: bigint | number
-    multiply?: bigint | number
-    divide?: bigint | number
-  }
-
   export type NestedIntFilter = {
     equals?: number
     in?: Enumerable<number>
@@ -100407,6 +100442,17 @@ export namespace Prisma {
     _max?: NestedEnumUserStatusFilter
   }
 
+  export type NestedBigIntFilter = {
+    equals?: bigint | number
+    in?: Enumerable<bigint> | Enumerable<number>
+    notIn?: Enumerable<bigint> | Enumerable<number>
+    lt?: bigint | number
+    lte?: bigint | number
+    gt?: bigint | number
+    gte?: bigint | number
+    not?: NestedBigIntFilter | bigint | number
+  }
+
   export type NestedDateTimeFilter = {
     equals?: Date | string
     in?: Enumerable<Date> | Enumerable<string>
@@ -100452,6 +100498,33 @@ export namespace Prisma {
     gt?: Decimal | DecimalJsLike | number | string
     gte?: Decimal | DecimalJsLike | number | string
     not?: NestedDecimalNullableFilter | Decimal | DecimalJsLike | number | string | null
+  }
+
+  export type NestedBigIntNullableFilter = {
+    equals?: bigint | number | null
+    in?: Enumerable<bigint> | Enumerable<number> | null
+    notIn?: Enumerable<bigint> | Enumerable<number> | null
+    lt?: bigint | number
+    lte?: bigint | number
+    gt?: bigint | number
+    gte?: bigint | number
+    not?: NestedBigIntNullableFilter | bigint | number | null
+  }
+
+  export type NestedBigIntWithAggregatesFilter = {
+    equals?: bigint | number
+    in?: Enumerable<bigint> | Enumerable<number>
+    notIn?: Enumerable<bigint> | Enumerable<number>
+    lt?: bigint | number
+    lte?: bigint | number
+    gt?: bigint | number
+    gte?: bigint | number
+    not?: NestedBigIntWithAggregatesFilter | bigint | number
+    _count?: NestedIntFilter
+    _avg?: NestedFloatFilter
+    _sum?: NestedBigIntFilter
+    _min?: NestedBigIntFilter
+    _max?: NestedBigIntFilter
   }
 
   export type NestedDateTimeWithAggregatesFilter = {
@@ -100526,6 +100599,22 @@ export namespace Prisma {
     _sum?: NestedDecimalNullableFilter
     _min?: NestedDecimalNullableFilter
     _max?: NestedDecimalNullableFilter
+  }
+
+  export type NestedBigIntNullableWithAggregatesFilter = {
+    equals?: bigint | number | null
+    in?: Enumerable<bigint> | Enumerable<number> | null
+    notIn?: Enumerable<bigint> | Enumerable<number> | null
+    lt?: bigint | number
+    lte?: bigint | number
+    gt?: bigint | number
+    gte?: bigint | number
+    not?: NestedBigIntNullableWithAggregatesFilter | bigint | number | null
+    _count?: NestedIntNullableFilter
+    _avg?: NestedFloatNullableFilter
+    _sum?: NestedBigIntNullableFilter
+    _min?: NestedBigIntNullableFilter
+    _max?: NestedBigIntNullableFilter
   }
 
   export type NestedDateTimeNullableFilter = {
@@ -100638,35 +100727,8 @@ export namespace Prisma {
     _max?: NestedFloatFilter
   }
 
-  export type NestedBigIntFilter = {
-    equals?: bigint | number
-    in?: Enumerable<bigint> | Enumerable<number>
-    notIn?: Enumerable<bigint> | Enumerable<number>
-    lt?: bigint | number
-    lte?: bigint | number
-    gt?: bigint | number
-    gte?: bigint | number
-    not?: NestedBigIntFilter | bigint | number
-  }
-
-  export type NestedBigIntWithAggregatesFilter = {
-    equals?: bigint | number
-    in?: Enumerable<bigint> | Enumerable<number>
-    notIn?: Enumerable<bigint> | Enumerable<number>
-    lt?: bigint | number
-    lte?: bigint | number
-    gt?: bigint | number
-    gte?: bigint | number
-    not?: NestedBigIntWithAggregatesFilter | bigint | number
-    _count?: NestedIntFilter
-    _avg?: NestedFloatFilter
-    _sum?: NestedBigIntFilter
-    _min?: NestedBigIntFilter
-    _max?: NestedBigIntFilter
-  }
-
   export type CharacterCreateWithoutOwnerInput = {
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -100683,14 +100745,14 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
     corporation: CorporationCreateNestedOneWithoutCharacterInput
     alliance?: AllianceCreateNestedOneWithoutCharacterInput
   }
 
   export type CharacterUncheckedCreateWithoutOwnerInput = {
     id?: number
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -100709,7 +100771,7 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
   }
 
   export type CharacterCreateOrConnectWithoutOwnerInput = {
@@ -100743,7 +100805,7 @@ export namespace Prisma {
     OR?: Enumerable<CharacterScalarWhereInput>
     NOT?: Enumerable<CharacterScalarWhereInput>
     id?: IntFilter | number
-    esiId?: IntFilter | number
+    esiId?: BigIntFilter | bigint | number
     createdAt?: DateTimeFilter | Date | string
     updatedAt?: DateTimeFilter | Date | string
     accessToken?: StringFilter | string
@@ -100762,7 +100824,7 @@ export namespace Prisma {
     scopes?: StringFilter | string
     securityStatus?: DecimalNullableFilter | Decimal | DecimalJsLike | number | string | null
     title?: StringNullableFilter | string | null
-    totalSp?: IntNullableFilter | number | null
+    totalSp?: BigIntNullableFilter | bigint | number | null
     ownerId?: IntFilter | number
   }
 
@@ -100989,7 +101051,7 @@ export namespace Prisma {
   }
 
   export type CharacterCreateWithoutAllianceInput = {
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -101006,14 +101068,14 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
     owner: UserCreateNestedOneWithoutCharactersInput
     corporation: CorporationCreateNestedOneWithoutCharacterInput
   }
 
   export type CharacterUncheckedCreateWithoutAllianceInput = {
     id?: number
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -101031,7 +101093,7 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
     ownerId: number
   }
 
@@ -101128,7 +101190,7 @@ export namespace Prisma {
   }
 
   export type CharacterCreateWithoutCorporationInput = {
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -101145,14 +101207,14 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
     owner: UserCreateNestedOneWithoutCharactersInput
     alliance?: AllianceCreateNestedOneWithoutCharacterInput
   }
 
   export type CharacterUncheckedCreateWithoutCorporationInput = {
     id?: number
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -101170,7 +101232,7 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
     ownerId: number
   }
 
@@ -101231,7 +101293,7 @@ export namespace Prisma {
 
   export type CharacterCreateManyOwnerInput = {
     id?: number
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -101250,11 +101312,11 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
   }
 
   export type CharacterUpdateWithoutOwnerInput = {
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -101271,14 +101333,14 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     corporation?: CorporationUpdateOneRequiredWithoutCharacterNestedInput
     alliance?: AllianceUpdateOneWithoutCharacterNestedInput
   }
 
   export type CharacterUncheckedUpdateWithoutOwnerInput = {
     id?: IntFieldUpdateOperationsInput | number
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -101297,12 +101359,12 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
   }
 
   export type CharacterUncheckedUpdateManyWithoutCharactersInput = {
     id?: IntFieldUpdateOperationsInput | number
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -101321,7 +101383,7 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
   }
 
   export type CorporationCreateManyAllianceInput = {
@@ -101343,7 +101405,7 @@ export namespace Prisma {
 
   export type CharacterCreateManyAllianceInput = {
     id?: number
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -101361,7 +101423,7 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
     ownerId: number
   }
 
@@ -101419,7 +101481,7 @@ export namespace Prisma {
   }
 
   export type CharacterUpdateWithoutAllianceInput = {
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -101436,14 +101498,14 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     owner?: UserUpdateOneRequiredWithoutCharactersNestedInput
     corporation?: CorporationUpdateOneRequiredWithoutCharacterNestedInput
   }
 
   export type CharacterUncheckedUpdateWithoutAllianceInput = {
     id?: IntFieldUpdateOperationsInput | number
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -101461,13 +101523,13 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     ownerId?: IntFieldUpdateOperationsInput | number
   }
 
   export type CharacterUncheckedUpdateManyWithoutCharacterInput = {
     id?: IntFieldUpdateOperationsInput | number
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -101485,13 +101547,13 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     ownerId?: IntFieldUpdateOperationsInput | number
   }
 
   export type CharacterCreateManyCorporationInput = {
     id?: number
-    esiId: number
+    esiId: bigint | number
     createdAt?: Date | string
     updatedAt?: Date | string
     accessToken: string
@@ -101509,12 +101571,12 @@ export namespace Prisma {
     scopes: string
     securityStatus?: Decimal | DecimalJsLike | number | string | null
     title?: string | null
-    totalSp?: number | null
+    totalSp?: bigint | number | null
     ownerId: number
   }
 
   export type CharacterUpdateWithoutCorporationInput = {
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -101531,14 +101593,14 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     owner?: UserUpdateOneRequiredWithoutCharactersNestedInput
     alliance?: AllianceUpdateOneWithoutCharacterNestedInput
   }
 
   export type CharacterUncheckedUpdateWithoutCorporationInput = {
     id?: IntFieldUpdateOperationsInput | number
-    esiId?: IntFieldUpdateOperationsInput | number
+    esiId?: BigIntFieldUpdateOperationsInput | bigint | number
     createdAt?: DateTimeFieldUpdateOperationsInput | Date | string
     updatedAt?: DateTimeFieldUpdateOperationsInput | Date | string
     accessToken?: StringFieldUpdateOperationsInput | string
@@ -101556,7 +101618,7 @@ export namespace Prisma {
     scopes?: StringFieldUpdateOperationsInput | string
     securityStatus?: NullableDecimalFieldUpdateOperationsInput | Decimal | DecimalJsLike | number | string | null
     title?: NullableStringFieldUpdateOperationsInput | string | null
-    totalSp?: NullableIntFieldUpdateOperationsInput | number | null
+    totalSp?: NullableBigIntFieldUpdateOperationsInput | bigint | number | null
     ownerId?: IntFieldUpdateOperationsInput | number
   }
 

@@ -10,7 +10,6 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:
-          release-as: 1.0.8
           release-type: node
           package-name: release-please-action
       # The logic below handles the npm publication:
