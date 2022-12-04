@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.0.9](https://github.com/dariusbakunas/eve-db/compare/v1.0.8...v1.0.9) (2022-12-04)
+
+
+### Bug Fixes
+
+* update character column types ([6dbcc3a](https://github.com/dariusbakunas/eve-db/commit/6dbcc3a826a3e8d0b4812e717a2569161b3ba82d))
+
 ## [1.0.8](https://github.com/dariusbakunas/eve-db/compare/v1.0.7...v1.0.8) (2022-11-14)
 
 
